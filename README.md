@@ -1,50 +1,68 @@
 # PPT Style Builder
 
-`ppt-style-builder` is a Codex skill for creating polished, editable PowerPoint decks from a reference presentation style.
+PPT Style Builder is a reusable workflow for creating polished, editable presentation decks from a reference PowerPoint style.
 
-It guides Codex through a full deck-building workflow:
+It is not limited to one AI tool. You can use the workflow with Codex, ChatGPT, Claude, Gemini, a design team, or your own manual slide-production process.
 
-- analyze a reference PPT's visual system
-- propose an adapted direction
-- research factual content and visual assets
-- draft slide-by-slide content before building
-- create editable PowerPoint slides
-- render and inspect the deck before delivery
+## What It Helps With
 
-## Installation
+- Learn the visual system of a reference PPT.
+- Adapt the style to a new topic without blindly copying it.
+- Write slide content before building the final deck.
+- Choose or generate visuals responsibly.
+- Build editable PowerPoint slides instead of flat screenshots.
+- Render and inspect the final deck before delivery.
 
-Clone this repository into your Codex skills directory:
+## Repository Contents
+
+```text
+.
+├── README.md
+├── workflow.md
+├── prompts/
+│   ├── style-analysis.md
+│   ├── slide-outline.md
+│   ├── slide-design.md
+│   └── visual-qa.md
+├── examples/
+│   └── classroom-author-presentation.md
+└── codex/
+    └── SKILL.md
+```
+
+## Quick Start
+
+1. Read [workflow.md](workflow.md).
+2. Pick the prompt template that matches your current step from [prompts/](prompts).
+3. Provide your reference PPT, topic, audience, language, and target slide count.
+4. Confirm the slide outline before building the final deck.
+5. Render or preview the deck and check it against the QA prompt.
+
+## Codex Installation
+
+To install this as a Codex skill, clone the repository and copy or symlink the `codex` folder into your skills directory:
+
+```bash
+mkdir -p ~/.codex/skills/ppt-style-builder
+cp codex/SKILL.md ~/.codex/skills/ppt-style-builder/SKILL.md
+```
+
+If you want live updates from the repository, use a symlink instead:
 
 ```bash
 mkdir -p ~/.codex/skills
-git clone <your-repo-url> ~/.codex/skills/ppt-style-builder
+ln -s "$(pwd)/codex" ~/.codex/skills/ppt-style-builder
 ```
 
 Restart Codex after installation if the skill does not appear immediately.
 
-## Usage
-
-Ask Codex for a presentation task that involves learning, imitating, redesigning, or adapting a PPT style.
-
-Example:
+## Example Request
 
 ```text
 Learn the style of this reference PPT, then create a 15-slide classroom presentation about Amy Tan.
 Write the slide content first and ask me to confirm before generating the deck.
 ```
 
-## Repository Structure
-
-```text
-.
-├── README.md
-└── SKILL.md
-```
-
-## Notes
-
-This skill is intentionally workflow-focused. It does not ship templates or bundled assets; instead, it instructs Codex to inspect the user's reference deck and build a new editable PowerPoint based on that style.
-
 ## License
 
-No license has been selected yet.
+MIT. See [LICENSE](LICENSE).
